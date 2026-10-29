@@ -1,0 +1,124 @@
+\documentclass{amsart}
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Equal radicals of consecutive products},
+  pdfauthor={Ruiyi Zhang}
+}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[lemma]{Remark}
+\numberwithin{equation}{section}
+
+\title{Equal radicals of consecutive products}
+\author{Ruiyi Zhang}
+\address{Independent Researcher, Columbia, Maryland, USA}
+\email{ryzfsu@gmail.com}
+\subjclass[2020]{Primary 11A25; Secondary 11D25}
+\keywords{radicals, consecutive integers, Diophantine equations}
+
+\begin{document}
+
+\input{sections/00-abstract}
+\maketitle
+
+\input{sections/01-setup}
+\input{sections/02-main-theorem}
+\input{sections/05-cubic-lower-bound}
+\input{sections/06-low-radical-tail}
+\input{sections/07-ll-conjecture-11}
+\input{sections/08-consequences}
+\appendix
+\input{sections/A-low-radical-proof}
+
+\section*{Use of AI tools}
+
+The author devised the main argument. Codex (OpenAI, GPT-6 Astra) carried
+out the numerical checks of the identities and of the cubic family and
+searched the literature. Claude Code (Anthropic, Claude Opus 5.5) checked
+the arguments and the references. The author checked every step of the
+proof and every reference, and takes full responsibility for the content
+of the paper.
+
+\section*{Statements and declarations}
+
+\textbf{Competing interests.} The author has no competing interests.
+
+\textbf{Funding.} No funding was received for this work.
+
+\textbf{Data availability.} No data sets were generated or analyzed in this
+work.
+
+\begin{thebibliography}{10}
+
+\bibitem{BSW1989}
+R. Balasubramanian, T.~N. Shorey, and M. Waldschmidt,
+\emph{On the maximal length of two sequences of consecutive integers with
+the same prime divisors}, Acta Math. Hungar. \textbf{54} (1989), no.~3--4,
+225--236, \url{https://doi.org/10.1007/BF01952052}.
+
+\bibitem{Diao2026}
+Y. Diao,
+\emph{Class numbers and integer points on some Pellian surfaces},
+J. Th\'eor. Nombres Bordeaux \textbf{37} (2025), no.~3, 973--988;
+\url{https://doi.org/10.5802/jtnb.1348}; arXiv:2408.03774v2 (2026).
+
+\bibitem{Erdos1980}
+P. Erd\H{o}s,
+\emph{How many pairs of products of consecutive integers have the same
+prime factors?}, Amer. Math. Monthly \textbf{87} (1980), no.~5, 391--392,
+\url{https://doi.org/10.1080/00029890.1980.11995045}.
+
+\bibitem{ErdosStraus1977}
+P. Erd\H{o}s and E.~G. Straus,
+\emph{On products of consecutive integers}, in:
+\emph{Number theory and algebra: collected papers dedicated to Henry B.
+Mann, Arnold E. Ross, and Olga Taussky-Todd}, Academic Press, New York,
+1977, 63--70.
+
+\bibitem{Kane2011}
+D.~M. Kane,
+\emph{On a problem relating to the ABC conjecture},
+preprint (2011), arXiv:1104.2635v1.
+
+\bibitem{Kane2014}
+D.~M. Kane,
+\emph{On the number of ABC solutions with restricted radical sizes},
+J. Number Theory \textbf{154} (2015), 32--43.
+\url{https://doi.org/10.1016/j.jnt.2014.09.021}; preprint version:
+arXiv:1104.2635v2 (2014). Proposition numbers refer to this version.
+
+\bibitem{LL2025}
+N. Lebowitz-Lockard,
+\emph{On pairs of consecutive sequences with the same radicals},
+preprint (2025), arXiv:2507.09899v1.
+
+\bibitem{Lehmer1964}
+D.~H. Lehmer,
+\emph{On a problem of St{\o}rmer},
+Illinois J. Math. \textbf{8} (1964), no.~1, 57--79,
+\url{https://doi.org/10.1215/ijm/1256067456}.
+
+\bibitem{Reuss2014}
+T. Reuss,
+\emph{Pairs of $k$-free numbers, consecutive square-full numbers},
+preprint (2014), arXiv:1212.3150v2.
+
+\bibitem{Sanna2022}
+C. Sanna,
+\emph{On the exponents in the factorizations of $r$ consecutive numbers},
+Quaest. Math. \textbf{45} (2022), no.~8, 1221--1228.
+\url{https://doi.org/10.2989/16073606.2021.1938277}.
+
+\bibitem{Tao2026}
+T. Tao,
+\emph{Products of consecutive integers with unusual anatomy},
+preprint (2026), arXiv:2603.27990v3.
+
+\end{thebibliography}
+
+\end{document}

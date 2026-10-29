@@ -1,0 +1,289 @@
+\section{Proof of the fixed-block theorem}\label{sec:fixed-block}
+
+Fix an integer $k\ge2$. Put
+\[
+P_k(n)=\prod_{j=0}^{k-1}(n+j),\qquad
+q_k(n)=\frac{P_k(n)}{\operatorname{rad}(P_k(n))}.
+\]
+The function $P_k$ is positive and strictly increasing on the positive
+integers. Write $\omega(D)$ for the number of distinct prime divisors of
+$D$. All implied constants in this section may depend on $k$.
+
+Lemma~2.1 is a Pell-equation count; compare Lebowitz--Lockard
+\cite[Lemma~8]{LL2025} and Tao \cite[Lemma~2.10]{Tao2026}.
+
+\begin{lemma}\label{lem:support-fibre}
+For every squarefree positive integer $Q$ and every real $X\ge2$,
+\[
+\#\{1\le z\le X:\operatorname{rad}(z(z+1))\mid Q\}
+\ll 2^{\omega(Q)}\log(2X),
+\]
+with an absolute implied constant. Consequently, for every $\delta>0$,
+every value of $\operatorname{rad}(P_k(n))$ has at most
+\begin{equation}\label{eq:endpoint-fibre}
+C_{k,\delta}X^{k\delta}\log(2X)
+\end{equation}
+preimages among the positive integers $n\le X$.
+\end{lemma}
+
+\begin{proof}
+Write $z(z+1)=dy^2$, where $d$ is squarefree. Then $d\mid Q$ and
+\[
+(2z+1)^2-d(2y)^2=1.
+\]
+The case $d=1$ has no solution with $z\ge1$, since
+$(2z+1-2y)(2z+1+2y)=1$ is impossible. For a fixed $d\ge2$, put
+$A=2z+1$, $B=2y$ and $\alpha=A+B\sqrt d$. Thus
+\[
+1<\alpha<2A\le4X+2,\qquad \alpha^{-1}=A-B\sqrt d.
+\]
+If $\alpha_2>\alpha_1$ arise from two solutions, then
+\[
+\frac{\alpha_2}{\alpha_1}=U_0+V_0\sqrt d>1,
+\qquad U_0,V_0\in\mathbb Z,\qquad U_0^2-dV_0^2=1.
+\]
+Its conjugate is its positive reciprocal. Hence
+\[
+U_0=\frac12\left(\frac{\alpha_2}{\alpha_1}
+                 +\frac{\alpha_1}{\alpha_2}\right)\ge2,
+\qquad
+\frac{\alpha_2}{\alpha_1}\ge2+\sqrt3.
+\]
+There are $O(\log(2X))$ such solutions for each $d\mid Q$. Summing over
+the squarefree divisors of $Q$ proves the first assertion.
+
+For every $\delta>0$,
+\[
+2^{\omega(Q)}\ll_\delta Q^\delta.
+\]
+Indeed, $2\le p^\delta$ for all sufficiently large primes $p$, and the
+remaining primes contribute a constant. If
+$Q=\operatorname{rad}(P_k(n))$ with $n\le X$, then
+$Q\le(X+k-1)^k\ll_k X^k$. Every preimage $m$ of $Q$ satisfies
+$\operatorname{rad}(m(m+1))\mid Q$, since $k\ge2$. This gives
+\eqref{eq:endpoint-fibre}.
+\end{proof}
+
+Erd\H{o}s and Straus \cite[p.~63]{ErdosStraus1977} also use a Pell equation
+for products of consecutive integers.
+
+For a positive integer $D$, let
+\[
+\rho_k(D)=\#\{x\bmod D:P_k(x)\equiv0\pmod D\}.
+\]
+
+\begin{lemma}\label{lem:block-roots}
+For every positive integer $D$,
+\[
+\rho_k(D)\le(k-1)!\,k^{\omega(D)}.
+\]
+\end{lemma}
+
+\begin{proof}
+If $p>k-1$, the $k$ factors of $P_k$ have distinct roots modulo $p$.
+At most one factor is divisible by $p$, so $\rho_k(p^j)=k$ for every
+$j\ge1$.
+
+For $p\le k-1$, put $C_p=v_p((k-1)!)$. Given an integer $x$, choose
+$i\in\{0,\ldots,k-1\}$ for which $v_p(x+i)$ is maximal, taking
+$v_p(0)=\infty$. For $j\ne i$, the ultrametric inequality and maximality
+give
+\[
+v_p(x+j)\le v_p(j-i).
+\]
+Thus
+\[
+\sum_{j\ne i}v_p(x+j)
+\le v_p\bigl(i!(k-1-i)!\bigr)\le C_p.
+\]
+If $p^j\mid P_k(x)$, then
+$p^{\max(j-C_p,0)}\mid x+i$. For each $i$ there are at most $p^{C_p}$
+such residue classes modulo $p^j$. Hence
+$\rho_k(p^j)\le kp^{C_p}$. The Chinese remainder theorem now gives
+\[
+\rho_k(D)\le k^{\omega(D)}\prod_{p\le k-1}p^{C_p}
+=(k-1)!\,k^{\omega(D)}.
+\qedhere
+\]
+\end{proof}
+
+Sanna \cite[Lemma~3.3]{Sanna2022} proves the related bound
+$O_r(x/y^{1/2})$ for the number of $n\le x$ such that one of
+$n,\ldots,n+r-1$ has powerful part exceeding $y$.
+
+\begin{lemma}\label{lem:quotient-tail}
+For all real $X\ge2$, $K\ge\max(k,2)$ and $0<\eta<1$,
+\begin{equation}\label{eq:quotient-tail}
+\#\{1\le n\le X:q_k(n)>K\}
+\ll_{k,\eta}XK^{-1+\eta}
+       +K^2(1+\log K)^{k-1}+X^{1/2}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Let $1\le n\le X$ satisfy $q_k(n)>K$. Suppose first that a prime $p>K$
+divides $q_k(n)$. Then
+$p^2\mid P_k(n)$. Since $p>K\ge k$, exactly one factor is divisible by
+$p$, and $p^2\mid n+i$ for some $0\le i<k$. The number of these $n$ is
+at most
+\[
+k\sum_{K<p\le\sqrt{X+k-1}}\left(\frac X{p^2}+1\right)
+\ll_k\frac XK+X^{1/2}.
+\]
+The last bound follows by summing over all integers in place of primes.
+
+Otherwise every prime factor of $q_k(n)$ is at most $K$. Multiply its
+prime factors, with multiplicity, until the product first exceeds $K$.
+This gives an integer $g$ such that
+\[
+g\mid q_k(n),\qquad K<g\le K^2,
+\qquad g\operatorname{rad}(g)\mid P_k(n).
+\]
+For the last divisibility, if $p^a\mid g$, then
+$a\le v_p(P_k(n))-1$. Lemma~\ref{lem:block-roots} bounds the number of
+these $n$ by
+\begin{equation}\label{eq:tail-crt}
+(k-1)!\sum_{K<g\le K^2}k^{\omega(g)}
+\left(\frac{X}{g\operatorname{rad}(g)}+1\right).
+\end{equation}
+For $0<\eta<1$, the Euler product
+\[
+\sum_{g\ge1}\frac{k^{\omega(g)}g^{1-\eta}}
+                   {g\operatorname{rad}(g)}
+=\prod_p\left(1+\frac{k}{p(p^\eta-1)}\right)
+\]
+converges, since its local factor is $1+O_{k,\eta}(p^{-1-\eta})$.
+The first term of \eqref{eq:tail-crt} is therefore
+$O_{k,\eta}(XK^{-1+\eta})$.
+
+Let $\tau_k(g)$ count the ordered factorizations of $g$ into $k$
+positive integers. Then $k^{\omega(g)}\le\tau_k(g)$ and, for $Y\ge1$,
+\[
+\sum_{g\le Y}\tau_k(g)
+\le Y\left(\sum_{r\le Y}\frac1r\right)^{k-1}
+\le Y(1+\log Y)^{k-1}.
+\]
+The second term of \eqref{eq:tail-crt} is
+$O_k(K^2(1+\log K)^{k-1})$. This proves \eqref{eq:quotient-tail}.
+\end{proof}
+
+\begin{lemma}\label{lem:small-quotient}
+For every real $X\ge2$ and $K\ge1$,
+\[
+\#\left\{(m,n):
+\begin{gathered}
+1\le m<n\le X,\quad q_k(m),q_k(n)\le K,\\
+\operatorname{rad}(P_k(m))=\operatorname{rad}(P_k(n))
+\end{gathered}\right\}
+\ll_k K^2\log(2X).
+\]
+\end{lemma}
+
+\begin{proof}
+Put $\mu=q_k(m)$ and $\nu=q_k(n)$. Strict monotonicity of $P_k$ gives
+\begin{equation}\label{eq:quotient-curve}
+1\le\mu<\nu\le K,\qquad \nu P_k(m)=\mu P_k(n).
+\end{equation}
+Set
+\[
+\xi=2m+k-1,\qquad \zeta=2n+k-1,
+\qquad
+R_k(U)=\prod_{j=0}^{k-1}(U+2j-k+1).
+\]
+Then $R_k(\zeta)=2^kP_k(n)$. With
+\[
+\mathcal H_k=\{h:1\le h\le k-1,\ h\equiv k-1\pmod2\},
+\qquad A_k=\sum_{h\in\mathcal H_k}h^2,
+\]
+we have
+\[
+R_k(U)=U^kG_k(U),\qquad
+G_k(U)=\prod_{h\in\mathcal H_k}\left(1-\frac{h^2}{U^2}\right).
+\]
+For $U\ge k+1$, the function $G_k$ is strictly increasing and
+\begin{equation}\label{eq:centered-defect}
+0<G_k(U)<1,\qquad 1-G_k(U)\le\frac{A_k}{U^2}.
+\end{equation}
+Indeed, $\mathcal H_k$ is nonempty and each factor is positive and
+strictly increasing. The last inequality follows from
+$1-\prod_j(1-x_j)\le\sum_jx_j$ for $0\le x_j\le1$.
+
+Fix $\mu,\nu$ in \eqref{eq:quotient-curve}, and put
+$\gamma=(\nu/\mu)^{1/k}$ and $\lambda=\zeta/\xi$.
+Thus $\zeta>\xi\ge k+1$ and
+\[
+\gamma^k=\lambda^k\frac{G_k(\zeta)}{G_k(\xi)},\qquad 1<\lambda<\gamma.
+\]
+Using \eqref{eq:centered-defect}, we obtain
+\begin{align*}
+0<\gamma-\lambda
+&=\gamma\left(1-\left(\frac{G_k(\xi)}{G_k(\zeta)}\right)^{1/k}\right)\\
+&\le\gamma\bigl(1-G_k(\xi)^{1/k}\bigr)\\
+&\le\gamma\bigl(1-G_k(\xi)\bigr)\\
+&\le\frac{A_k\gamma}{\xi^2}.
+\end{align*}
+Write $\lambda=h/q$ in lowest terms, with $h,q>0$. Since $q\mid\xi$,
+\[
+0<\gamma-\frac hq\le\frac{A_k\gamma}{q^2},\qquad q\le2X+k-1.
+\]
+In a block $2^j\le q<2^{j+1}$, these fractions lie in an interval of
+length $A_k\gamma/2^{2j}$. Distinct reduced fractions in the block are
+more than $2^{-2j-2}$ apart. There are at most $1+4A_k\gamma$ fractions
+in each block, and hence $O_k(\gamma\log(2X))$ possible values of $\lambda$.
+
+For each such $\lambda$, every possible $\xi$ is a root of
+\[
+\nu R_k(U)-\mu R_k(\lambda U)=0.
+\]
+This polynomial has degree $k$, since its leading coefficient is
+$\nu-\mu\lambda^k=\mu(\gamma^k-\lambda^k)>0$.
+It has at most $k$ real roots. Each root determines
+at most one pair $(m,n)$. Therefore, for fixed $\mu,\nu$, the number of
+pairs in \eqref{eq:quotient-curve} is
+\[
+\ll_k (\nu/\mu)^{1/k}\log(2X).
+\]
+Finally,
+\[
+\sum_{1\le\mu<\nu\le K}(\nu/\mu)^{1/k}
+\le\sum_{\nu\le K}\nu^{1/k}\frac{k}{k-1}\nu^{1-1/k}
+\ll_k K^2.
+\qedhere
+\]
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Let $\varepsilon>0$. A counted pair either has both quotients at most
+$K$, or has an endpoint in the exceptional set of
+Lemma~\ref{lem:quotient-tail}. Multiplying the latter count by
+\eqref{eq:endpoint-fibre} and applying Lemma~\ref{lem:small-quotient}
+gives, for $K\ge\max(k,2)$,
+\begin{align}\label{eq:fixed-block-assembly}
+F_{k,k}(X)\ll_{k,\delta,\eta}{}&K^2\log(2X)\notag\\
+&+X^{k\delta}\log(2X)
+\left(XK^{-1+\eta}+K^2(1+\log K)^{k-1}+X^{1/2}\right).
+\end{align}
+The fibre bound counts all possible partners $1\le m\le X$, so this
+also covers pairs whose smaller endpoint is exceptional.
+
+Ignoring the factors $X^{k\delta}$, $K^\eta$ and the logarithms,
+$K=X^\tau$ gives the exponent $\max(2\tau,1-\tau,1/2)$, minimized at
+$\tau=1/3$. Set $K=\max(k,2,X^{1/3})$. If $X\ge k^3$, then
+$K=X^{1/3}$. With this
+choice fixed, take
+\[
+\eta=\min\left(\frac12,\frac\varepsilon2\right),
+\qquad \delta=\frac\varepsilon{4k}.
+\]
+Every power of $X$ in \eqref{eq:fixed-block-assembly} is at most
+\[
+\frac23+k\delta+\frac\eta3
+\le\frac23+\frac{5\varepsilon}{12}.
+\]
+The logarithmic factors together are
+$O_{k,\varepsilon}(X^{\varepsilon/2})$. Hence
+\[
+F_{k,k}(X)\ll_{k,\varepsilon}X^{2/3+\varepsilon}.
+\]
+The bounded range $2\le X<k^3$ is absorbed into the implied constant.
+\end{proof}

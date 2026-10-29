@@ -1,0 +1,39 @@
+\section{Lebowitz--Lockard's Conjecture 11}
+
+Lebowitz--Lockard state the following conjecture \cite[Conjecture~11]{LL2025}:
+\begin{quote}
+If $k,\ell>1$ and $(k,\ell)\ne(2,2)$, then the equation
+\[
+\operatorname{rad}(m(m+1)\cdots(m+k-1))
+=\operatorname{rad}(n(n+1)\cdots(n+\ell-1))
+\]
+only has finitely many solutions.
+\end{quote}
+Their preceding definition of $F_{k,\ell}$ imposes $m<n$. The conjecture
+also fails under this order condition, for $(k,\ell)=(3,2)$ and $(4,2)$.
+Equivalent forms of the identities below appear in Erd\H{o}s--Straus
+\cite[p.~64]{ErdosStraus1977}. For every positive integer $t$,
+\begin{align*}
+P_2(t(t+2))&=t(t+2)(t+1)^2,\\
+P_2\!\left(\frac{t(t+3)}2\right)&=\frac14 P_4(t).
+\end{align*}
+Since $t+1\mid P_3(t)$, the first identity shows that
+$(m,n)=(t,t(t+2))$ gives equal radicals for $(k,\ell)=(3,2)$. For the
+second identity, four consecutive integers have product divisible by
+$24$: one is divisible by $4$, a distinct one is even, and one is divisible
+by $3$. Thus $P_4(t)/4$ remains divisible by $6$, so division by $4$ leaves
+its prime support unchanged.
+The integer $t(t+3)/2$ is integral, and the second identity gives equal
+radicals for $(m,n)=(t,t(t+3)/2)$ and $(k,\ell)=(4,2)$. Both families have
+$m<n$ for every positive integer $t$. Swapping the variables gives
+infinite families for $(2,3)$ and $(2,4)$ if no order condition is imposed.
+Conjecture~11 is false as literally stated; its intended form is unclear.
+Erd\H{o}s and Straus \cite[p.~64]{ErdosStraus1977} conjectured that
+$A(n,k)=\rho A(m,\ell)$ has only finitely many solutions with $m\ge n+k$
+for each rational $\rho$ when $\min(k,\ell)>1$ and $\max(k,\ell)>2$,
+where $A(n,k)=(n+k)!/n!$. The second identity reads
+$A(t-1,4)=4A(t(t+3)/2-1,2)$, and
+$t(t+3)/2-1>(t-1)+4$ for every integer $t\ge3$. Their conjecture is
+therefore also false as literally stated. They print the underlying
+four-factor identity on the same page in their divisibility argument.
+

@@ -1,0 +1,225 @@
+\section{Proof of Theorem~3}\label{app:low-radical-proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:low-radical}]
+Write uniquely
+\[
+t=d^2r,\qquad t+1=f^2s,
+\]
+where $r,s$ are squarefree positive integers. Then
+\begin{equation}\label{eq:low-radical-pell}
+f^2s-d^2r=1,\qquad (d,f)=(r,s)=1.
+\end{equation}
+Put
+\[
+\alpha_0=\gcd(r,\operatorname{rad}(d)),\qquad
+\beta_0=\gcd(s,\operatorname{rad}(f)).
+\]
+The radical identity is
+\begin{equation}\label{eq:low-radical-identity}
+\operatorname{rad}(t(t+1))
+=\frac{rs\operatorname{rad}(d)\operatorname{rad}(f)}{\alpha_0\beta_0}.
+\end{equation}
+Since $rs>H^2/(d^2f^2)$, every point counted by $N(H,Y)$ satisfies
+\begin{equation}\label{eq:low-radical-modulus}
+d^2f^2\alpha_0\beta_0\ge
+\frac{H^2\operatorname{rad}(d)\operatorname{rad}(f)}{Y}.
+\end{equation}
+
+Set $H_0=H^{7/12}$ and first count the points with $df\le H_0$. For fixed
+$d,f,\alpha_0,\beta_0$, the divisibilities $\alpha_0\mid r$ and $\beta_0\mid s$ give
+\[
+t\equiv0\pmod{d^2\alpha_0},\qquad t\equiv-1\pmod{f^2\beta_0}.
+\]
+The moduli are coprime, since every prime dividing the first divides $t$
+and every prime dividing the second divides $t+1$. Thus the Chinese
+remainder theorem gives at most one class modulo $d^2f^2\alpha_0\beta_0$,
+containing at most $H/(d^2f^2\alpha_0\beta_0)+1$ integers in the interval. By
+\eqref{eq:low-radical-modulus},
+\begin{equation}\label{eq:low-radical-small-product}
+N_{\mathrm{lo}}\ll
+\frac YH\sum_{df\le H_0}
+ \frac{\tau(\operatorname{rad}(d))\tau(\operatorname{rad}(f))}
+      {\operatorname{rad}(d)\operatorname{rad}(f)}
+ +\sum_{df\le H_0}\tau(d)\tau(f).
+\end{equation}
+For every $\eta>0$, Rankin's trick and the convergent product
+\[
+\sum_{n\ge1}\frac{\tau(\operatorname{rad}(n))}
+                   {\operatorname{rad}(n)n^\eta}
+=\prod_p\left(1+\frac{2}{p(p^\eta-1)}\right)<\infty
+\]
+give
+\[
+\sum_{df\le H_0}
+ \frac{\tau(\operatorname{rad}(d))\tau(\operatorname{rad}(f))}
+      {\operatorname{rad}(d)\operatorname{rad}(f)}
+\ll_\eta H_0^\eta.
+\]
+Also $\sum_{df\le H_0}\tau(d)\tau(f)\ll H_0(\log(2H_0))^3$, by summing
+the four-fold divisor function. Taking $\eta$ sufficiently small in
+terms of $\varepsilon$ and absorbing logarithms gives
+\begin{equation}\label{eq:low-radical-low-bound}
+N_{\mathrm{lo}}\ll_\varepsilon
+H^\varepsilon\left(\frac YH+H^{7/12}\right).
+\end{equation}
+
+It remains to count solutions of \eqref{eq:low-radical-pell} with
+$df>H_0$; here we discard the radical restriction. Since $r,s\ge1$,
+$t\le2H$, and $t+1\le3H$, we have
+\begin{equation}\label{eq:low-radical-squareparts}
+d\le\sqrt{2H},\qquad f\le\sqrt{3H}.
+\end{equation}
+Partition the $d,f$ ranges into dyadic boxes and refine each into
+multiplicative cells of ratio $\lambda=2^{1/8}$. On a cell write
+\[
+ S<t\le\lambda S,\qquad \mathcal D<d\le\lambda \mathcal D,\qquad
+\mathcal E<f\le\lambda \mathcal E,
+\]
+and put $x=S/\lambda^2$, $U=x/\mathcal D^2$, and $V=x/\mathcal E^2$. Then
+$r=t/d^2\in(U,\lambda^3U)$ and
+$s=(t+1)/f^2\in(V,\lambda^3V+\mathcal E^{-2})$. Since
+$\lambda^3+\lambda^2/S<2$ for $S\ge2$, we have
+\[
+U<r<2U,\qquad V<s<2V,
+\]
+and the variables lie in dyadic boxes with the exact scale identities
+\[
+U\mathcal D^2=V\mathcal E^2=x\asymp H.
+\]
+Only a bounded number of such cells is used in each dyadic box. In every
+cell,
+\begin{equation}\label{eq:low-radical-box-products}
+UV\asymp\frac{H^2}{(\mathcal D\mathcal E)^2}.
+\end{equation}
+
+Suppose first that $UV\le H^{1/2}$. Fix squarefree $r,s$. If $rs=1$,
+\eqref{eq:low-radical-pell} would give $f^2-d^2=1$, which is impossible
+for positive $d,f$. Otherwise
+\[
+(sf)^2-rsd^2=s.
+\]
+The element
+\[
+\xi=sf+d\sqrt{rs}
+      =\sqrt s\bigl(\sqrt{t+1}+\sqrt t\bigr)
+\]
+is totally positive and has norm $s$. The relevant quadratic order is
+maximal unless $rs\equiv1\pmod4$; in that case it has conductor $2$,
+and $s$ is odd and coprime to the conductor. Thus the ideals of norm $s$
+in the order are invertible and correspond to ideals of norm $s$ in the
+maximal order. Every prime dividing $s$ ramifies, so at most $\tau(s)$ such
+ideals arise. Generators of the same principal ideal differ by a unit of
+the order; for two totally positive generators their ratio is a totally
+positive norm-one unit. If
+$\epsilon>1$ is such a unit, its integer trace is at least $3$, whence
+$\epsilon\ge(3+\sqrt5)/2>2$. In contrast, the displayed formula for
+$\xi$ shows that its ratio across $H<t\le2H$ is less than $\sqrt2$.
+Thus each ideal contributes at most one solution. Since $s\le3H$,
+$\tau(s)\ll_\varepsilon H^\varepsilon$. There are $O(UV)$ choices of
+$r,s$ in their boxes, and therefore
+\begin{equation}\label{eq:low-radical-pell-range}
+N_{UV\le H^{1/2}}\ll_\varepsilon H^\varepsilon UV
+                       \ll_\varepsilon H^{1/2+\varepsilon}.
+\end{equation}
+
+Now suppose $UV>H^{1/2}$. Equations
+\eqref{eq:low-radical-box-products} and $df>H_0$ give
+\[
+H^{7/12}\ll \mathcal D\mathcal E\ll H^{3/4},\qquad
+\log(\mathcal D\mathcal E)\asymp\log(UV)\asymp\log H.
+\]
+Apply Reuss's determinant estimate \cite[Theorem~1]{Reuss2014} to
+$sf^2-rd^2=1$ with $(k,\ell,h)=(2,1,1)$ and scales
+$U=x/\mathcal D^2$, $V=x/\mathcal E^2$. They satisfy
+$U\mathcal D^2=V\mathcal E^2=x$. Since $df>H_0$ and
+\eqref{eq:low-radical-squareparts} gives $d\le\sqrt{2H}$ and
+$f\le\sqrt{3H}$, we have
+\[
+d>H_0/\sqrt{3H}\gg H^{1/12},\qquad
+f>H_0/\sqrt{2H}\gg H^{1/12}.
+\]
+As $d\le\lambda \mathcal D$, $f\le\lambda \mathcal E$, and $x\asymp H$, this implies
+$\mathcal D,\mathcal E,x>1$ for large $H$. Define
+\[
+M=\exp\!\left(\frac{9\log(\mathcal D\mathcal E)\log(UV)}{8\log x}\right).
+\]
+In this range $\mathcal D\mathcal E>1$, $UV>H^{1/2}>1$, and $x>1$, so $M>1$.
+If the sides are interchanged, the equation has $h=-1$. Reuss's
+hypotheses are $1\le\ell<k$, $h\ne0$,
+$\log(\mathcal D\mathcal E)\asymp\log(UV)\asymp\log x$, and, when $\ell=1$,
+$\mathcal D\mathcal E\gg x^{1/k}$. We have $\mathcal D\mathcal E\gg H^{7/12}\gg x^{1/2}$, and the logarithmic
+comparabilities were established above. The estimate applies for large
+$x$; bounded values of $H$ are absorbed in the implied constant. The
+resulting bound for the number $N$ in a cell is
+\begin{equation}\label{eq:low-radical-reuss}
+\begin{aligned}
+N&\ll_\varepsilon H^\varepsilon
+ \min\left\{(\mathcal D\mathcal E M)^{1/2}+\mathcal D+\mathcal E,
+              (UV M)^{1/2}+U+V\right\},\\
+\log M&=\frac{9\log(\mathcal D\mathcal E)\log(UV)}{8\log x}.
+\end{aligned}
+\end{equation}
+Write $\mathcal D\mathcal E=H^\theta$ up to constant factors. Since $x\asymp H$ and
+$UV\asymp H^2/(\mathcal D\mathcal E)^2$, the determinant term in
+\eqref{eq:low-radical-reuss} has exponent at most
+\[
+\phi(\theta)+O\left(\frac1{\log H}\right),\qquad
+\phi(\theta)=\frac12\min(\theta,2-2\theta)+\frac98\theta(1-\theta),
+\quad \frac7{12}\le\theta\le\frac34.
+\]
+The function increases up to $\theta=2/3$ and decreases afterwards, with
+\[
+\phi(2/3)=\frac13+\frac14=\frac7{12}.
+\]
+
+It remains to bound the additive terms. For $\theta\le2/3$, use the first
+branch of \eqref{eq:low-radical-reuss}; by
+\eqref{eq:low-radical-squareparts}, $\mathcal D+\mathcal E\ll H^{1/2}$. For $\theta\ge2/3$,
+orient the cell so $\mathcal D\le \mathcal E$, hence $U\ge V$, and use the second branch.
+If $U\le H^{7/12}$, its additive term is already small enough. Otherwise
+$U=x/\mathcal D^2>H^{7/12}$ gives $\mathcal D\ll H^{5/24}$; together with
+$\mathcal D\mathcal E\gg H^{2/3}$ this gives $\mathcal E\gg H^{11/24}$ and $V\ll H^{1/12}$.
+Fixing $d,s$, the equation gives
+\[
+f^2s\equiv1\pmod{d^2},
+\]
+or $f^2s\equiv-1\pmod{d^2}$ in the reversed orientation. Since
+$(d,s)=1$, each sign has at most $4^{\omega(d)}\ll_\varepsilon H^\varepsilon$
+roots modulo $d^2$. Counting $f$ in its interval for each root and
+summing over $d\ll \mathcal D$ and $s\ll V$ gives
+\[
+N\ll_\varepsilon H^\varepsilon
+       \left(\frac{\mathcal E V}{\mathcal D}+\mathcal D V\right)
+ \ll_\varepsilon H^\varepsilon
+       \left(\frac{H}{\mathcal D\mathcal E}+\mathcal D V\right)
+ \ll_\varepsilon H^{1/3+\varepsilon},
+\]
+since $\mathcal D V\ll H^{7/24}$. Thus all additive terms are below
+$H^{7/12+\varepsilon}$. There are $O((\log H)^2)$ dyadic boxes and a
+bounded number of cells in each. Summing
+\eqref{eq:low-radical-pell-range} and the bounds above over all cells, the
+logarithms are absorbed into $H^\varepsilon$ and
+\begin{equation}\label{eq:low-radical-high-bound}
+N_{\mathrm{hi}}\ll_\varepsilon H^{7/12+\varepsilon}.
+\end{equation}
+Combining \eqref{eq:low-radical-low-bound} and
+\eqref{eq:low-radical-high-bound} proves the theorem.
+\end{proof}
+
+\begin{remark}
+Diao's Lemma~2.1 \cite{Diao2026} gives the $7/12$ exponent for
+$\delta_1x_1^2-\delta_2x_2^2=\vartheta$ in dyadic boxes with
+$\Delta_1\le\Delta_2$, $\Delta_1\Delta_2\le B$, and
+$\Delta_1X_1^2=\Delta_2X_2^2=B$, where $\vartheta\in\{\pm1,\pm2\}$. In our
+cell the scales are $(\Delta_1,X_1,\Delta_2,X_2,B)
+=(V,\mathcal E,U,\mathcal D,x)$, and the equation is
+$sf^2-rd^2=1$. If the scales need to be ordered, interchanging the two
+sides changes $\vartheta$ to $-1$. Since $\mathcal D\mathcal E\gg H^{7/12}$ and $x\asymp H$,
+$UV=x^2/(\mathcal D\mathcal E)^2\ll H^{5/6}\ll x$ for sufficiently large $H$.
+Thus Diao's condition $\Delta_1\Delta_2\le B$ holds. Diao proves Lemma~2.1 by
+combining the determinant estimate (2.1) with the Fouvry--Jouve estimate
+(2.2). The determinant input is the $(k,\ell)=(2,1)$ case of Reuss's
+Theorem~1 \cite{Reuss2014}, applied above with $h=\pm1$. Diao cites this
+estimate as Theorem~5 of Reuss's 2015 thesis; his lemma therefore gives the
+high-product bound directly.
+\end{remark}

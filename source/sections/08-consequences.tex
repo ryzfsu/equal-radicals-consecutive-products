@@ -1,0 +1,68 @@
+\section{Further consequences}\label{sec:consequences}
+
+\subsection{Radical fibres and moments}
+\begin{remark}
+Lemma~\ref{lem:support-fibre} is a growth form of the Pell argument; compare
+Lehmer \cite[Theorem~1]{Lehmer1964} and Lebowitz--Lockard
+\cite[Lemma~8]{LL2025}. In particular, if
+\[
+\nu_R(X)=\#\{1\le n\le X:\operatorname{rad}(n(n+1))=R\},
+\]
+then Lemma~\ref{lem:support-fibre} gives
+\[
+\nu_R(X)\ll 2^{\omega(R)}\log(2X)\ll_\varepsilon X^\varepsilon
+\qquad(R\ll X^2),
+\]
+so $\max_R\nu_R(X)\ll_\varepsilon X^\varepsilon$. Since
+\[
+\sum_R\nu_R(X)=\lfloor X\rfloor,\qquad
+\sum_R\nu_R(X)(\nu_R(X)-1)=2F(X),
+\]
+the main theorem gives
+\[
+\begin{aligned}
+\#\{\operatorname{rad}(n(n+1)):1\le n\le X\}
+&=\lfloor X\rfloor-O_\varepsilon(X^{2/3+\varepsilon}),\\
+\sum_R\nu_R(X)^r
+&=\lfloor X\rfloor+O_{r,\varepsilon}(X^{2/3+\varepsilon})
+\end{aligned}
+\]
+for each fixed integer $r\ge2$. For $r\ge3$, summing the following
+pointwise bound over $R$ gives
+\[
+0\le \nu_R(X)^r-\nu_R(X)
+\le (r-1)\bigl(\max_S\nu_S(X)\bigr)^{r-2}
+       \nu_R(X)(\nu_R(X)-1),
+\]
+and hence the stated moment estimate.
+The case $r=2$ follows from the pair identity above. That identity also
+gives
+\[
+0\le \lfloor X\rfloor-\#\{R:\nu_R(X)>0\}
+=\sum_{\nu_R(X)>0}(\nu_R(X)-1)\le F(X).
+\]
+\end{remark}
+
+\subsection{Short gaps}
+\begin{remark}
+For $1\le\Delta\le X$, let $G(X,\Delta)$ count the pairs in $F(X)$ with
+$n-m\le\Delta$. For a fixed gap $d=n-m\ge2$, every prime dividing the
+common radical divides one factor from each of $m(m+1)$ and $n(n+1)$.
+Subtracting these factors shows that it divides one of $d-1,d,d+1$.
+There are at most $2^{\omega(d(d-1)(d+1))}$ possible common radicals.
+Since $d(d-1)(d+1)\le X^3$, take $\delta=\varepsilon/6$ in
+$2^{\omega(q)}\ll_\delta q^\delta$. This contributes at most
+$O_\varepsilon(X^{\varepsilon/2})$ radicals. In the fibre estimate, take
+its exponent parameter to be $\varepsilon/8$; then
+$X^{\varepsilon/4}\log(2X)\ll_\varepsilon X^{\varepsilon/2}$. Thus each
+gap contributes $O_\varepsilon(X^\varepsilon)$ pairs. Summing over
+$d\le\Delta$ gives
+\[
+G(X,\Delta)\ll_\varepsilon \Delta X^\varepsilon.
+\]
+For $d=1$, equality of radicals reduces to
+$\operatorname{rad}(m)=\operatorname{rad}(m+2)$, which forces $m=2$ and
+gives the single pair $(m,n)=(2,3)$: their common radical divides
+$\operatorname{rad}(\gcd(m,m+2))\mid2$. It cannot be $1$, so both terms
+are powers of $2$, which leaves $m=2$.
+\end{remark}

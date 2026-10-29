@@ -1,0 +1,48 @@
+\section{A radical-threshold estimate from known results}\label{sec:low-radical}
+
+For real $H\ge2$ and $1\le Y<H^2$, define
+\[
+N(H,Y)=\#\{t\in\mathbb Z:H<t\le2H,
+                 \operatorname{rad}(t(t+1))\le Y\}.
+\]
+
+\begin{theorem}\label{thm:low-radical}
+For every $\varepsilon>0$,
+\[
+N(H,Y)\ll_\varepsilon H^\varepsilon
+       \left(\frac YH+H^{7/12}\right)
+\]
+uniformly for real $H\ge2$ and $1\le Y<H^2$.
+\end{theorem}
+
+Theorem~3 is a consequence of known estimates, stated here in this notation.
+In the proof of Kane's Proposition~7 \cite{Kane2014}, the dyadic
+lattice count for triples of height $N_0$ is bounded by
+\[
+N_0^\varepsilon\left[
+\frac{\operatorname{rad}(A)\operatorname{rad}(B)\operatorname{rad}(C)}{|C|}
++v(A)v(B)v(C)\right].
+\]
+For $H<t\le2H$, take $N_0=\lceil2H+1\rceil$ and
+$(A,B,C)=(1,t,-(t+1))$. Put
+ \[
+S_2(n)=\prod_{p^j\parallel n}p^{\lfloor j/2\rfloor},\qquad
+T_2(n)=\frac{n}{S_2(n)^2},\qquad
+\Pi=S_2(t)S_2(t+1).
+\]
+Here $v(n)=\prod_{p^2\mid n}p=\operatorname{rad}(S_2(n))$ in Kane's
+notation. When $\Pi\le H^{2/3}$, the displayed lattice
+inequality gives $H^\varepsilon(Y/H+\Pi)$. For $\Pi>H^{2/3}$,
+Kane's Proposition~10 \cite[Proposition~10]{Kane2014} gives the
+square-part estimate
+\[
+H^\varepsilon\left(T_2(t)T_2(t+1)
+ +\sqrt{\Pi T_2(t)T_2(t+1)}\right)
+\ll H^\varepsilon\left(\frac{H^2}{\Pi^2}+\frac{H}{\sqrt{\Pi}}\right),
+\]
+since $t(t+1)\ll H^2$. Both ranges are
+$O_\varepsilon(H^\varepsilon(Y/H+H^{2/3}))$, with the split point
+$\Pi=H^{2/3}$ balancing the terms in Kane's proof. Diao's Lemma~2.1
+\cite{Diao2026} gives the $7/12$ estimate in the large-product range.
+Appendix~A gives a detailed deduction via Reuss's theorem. Theorem~3 records
+this known consequence in the notation used here.

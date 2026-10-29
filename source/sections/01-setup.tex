@@ -1,0 +1,57 @@
+\section{Introduction}\label{sec:introduction}
+
+For a positive integer $a$, let $\operatorname{rad}(a)=\prod_{p\mid a}p$.
+We study the ordered count
+\[
+ F(X)=\#\{1\le m<n\le X:
+ \operatorname{rad}(m(m+1))=\operatorname{rad}(n(n+1))\}.
+\]
+More generally, put
+\[
+ P_k(t)=\prod_{j=0}^{k-1}(t+j),\qquad
+ F_{k,k}(X)=\#\{1\le m<n\le X:
+ \operatorname{rad}(P_k(m))=\operatorname{rad}(P_k(n))\}.
+\]
+Thus $F(X)=F_{2,2}(X)$. We impose no disjointness condition on the two
+blocks, and all implied constants may depend on the fixed integer $k$.
+
+\begin{theorem}\label{thm:main}
+For every fixed integer $k\ge2$, every $\varepsilon>0$, and every real
+$X\ge2$,
+\[
+ F_{k,k}(X)\ll_{k,\varepsilon}X^{2/3+\varepsilon}.
+\]
+\end{theorem}
+
+Erd\H{o}s asked for the size of $F(X)$ \cite{Erdos1980}.
+Balasubramanian, Shorey and Waldschmidt \cite[\S5]{BSW1989} studied
+non-overlapping blocks of consecutive integers with the same prime divisors.
+Lebowitz--Lockard \cite[Theorems~5 and~10]{LL2025} proved
+$F_{k,k}(X)\le X^{1+o(1)}$. For $k\ge3$, Theorem~\ref{thm:main}
+replaces this exponent by $2/3+\varepsilon$. Pell equations of this kind
+go back to Lehmer's work on St{\o}rmer's problem \cite{Lehmer1964}; see
+\cite[\S2]{BSW1989}.
+
+For $k=2$, Kane's localized estimates \cite[Propositions~7 and~10]{Kane2014}
+(Propositions~6 and~9 of \cite{Kane2011}) give the large-quotient endpoint
+bound after specialization to $(1,t,-(t+1))$ and dyadic summation. In the
+proof below, Lemma~\ref{lem:small-quotient} handles the small-quotient range;
+together with the endpoint-fibre and quotient-tail bounds, it gives an
+independent proof of the $k=2$ case.
+
+Put $q_k(n)=P_k(n)/\operatorname{rad}(P_k(n))$. Splitting at a cutoff $K$
+and applying the endpoint-fibre, quotient-tail and small-quotient estimates
+gives, for $\max\{k,2\}\le K\le X$,
+\begin{equation}\label{eq:introduction-split}
+F_{k,k}(X)\ll_{k,\varepsilon}
+X^\varepsilon\bigl(K^2+X/K+X^{1/2}\bigr).
+\end{equation}
+For $X\ge k^3$, taking $K=X^{1/3}$ in
+\eqref{eq:introduction-split} proves Theorem~\ref{thm:main}. The bounded
+range $2\le X<k^3$ is absorbed into the implied constant, since $k$ is fixed.
+Theorem~\ref{thm:cubic-family} gives an explicit lower-bound family for
+Erd\H{o}s's count. Theorem~\ref{thm:low-radical} follows from known estimates;
+its deduction appears in Appendix~A.
+Section~\ref{sec:consequences} gives two consequences of the pair bound.
+The tools used for numerical checks and literature searches are identified
+at the end of the paper.
