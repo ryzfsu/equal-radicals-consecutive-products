@@ -2,6 +2,8 @@
 
 Ruiyi Zhang
 
+DOI: [10.5281/zenodo.23758120](https://doi.org/10.5281/zenodo.23758120)
+
 Let `rad(a)` be the product of the distinct primes dividing `a`, let
 `P_k(t) = t(t+1)...(t+k-1)`, and let
 
@@ -36,3 +38,19 @@ The paper also contains:
     pdflatex main.tex
     pdflatex main.tex
     pdflatex main.tex
+
+## Citation
+
+Ruiyi Zhang, *Equal radicals of consecutive products*, preprint, Zenodo, 2026. https://doi.org/10.5281/zenodo.23758120
+
+```bibtex
+@misc{zhang2026equalradicals,
+  author    = {Zhang, Ruiyi},
+  title     = {Equal radicals of consecutive products},
+  year      = {2026},
+  publisher = {Zenodo},
+  note      = {Preprint},
+  doi       = {10.5281/zenodo.23758120},
+  url       = {https://doi.org/10.5281/zenodo.23758120}
+}
+```
